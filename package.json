@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "buildhms": "ng build --output-hashing=none",
+    "packagehms": "cd dist/test-app && type runtime.js polyfills.js main.js > bundle.js"
   },
   "private": true,
   "dependencies": {
