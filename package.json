@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "buildhms": "ng build --output-hashing=none",
-    "packagehms": "cd dist/test-app && type runtime.js polyfills.js main.js > bundle.js"
+    "packagehms": "cd dist/test-app && type runtime.js polyfills.js main.js > bundle.js",
+    "buildall": "npm run buildhms && npm run packagehms"
   },
   "private": true,
   "dependencies": {

@@ -8,6 +8,16 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-app';
-  @ViewChild('selection') input: ElementRef;
+  public selection: string = '';
 
+  public updateSelection(value: string) {
+    this.selection = value;
+    
+    // Access DOM outside angular app/component
+    const outsideEl = document.querySelector('#data-from-angular-app');
+    if (outsideEl) {
+      console.log(`Value writted to outside dom from Angular component: ${value}`);
+      outsideEl.innerHTML = `<pre><b>${value}</b></pre>`;
+    }
+  }
 }
